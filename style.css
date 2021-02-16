@@ -103,7 +103,7 @@ button:hover {
 
 /* HEADER =============================================== */
 header {
-    background: #161F2D;
+    background: #1D2636;
     padding: 2rem 0 10rem;
     text-align: center;
 }
@@ -115,7 +115,7 @@ header {
 
 /* Balance =============================================== */
 #balance {
-    margin-top: -8rem;
+    margin-top: -7rem;
 }
 
 #balance h2 {
@@ -151,9 +151,19 @@ header {
 }
 
 .card.total {
-    background: #119BAE;
+    background: #207EAB;
     color:white;
 }
+
+.redCard {
+    background: red !important;
+    color: white;
+  }
+
+  .greenCard {
+      background: var(--green) !important;
+      color: white;
+    }
 
 /* TABLE =============================================== */
 #transaction {

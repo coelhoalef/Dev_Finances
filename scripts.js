@@ -18,6 +18,36 @@ const Modal = {
     }
 }
 
+const colorBalanceTotal = {
+    colorTotal() {
+      const balanceTotal = document.querySelector(".card.total");
+  
+      if (Transaction.total() < 0) {
+        balanceTotal.classList.add("redCard");
+      } else {
+        balanceTotal.classList.remove("redCard");
+      }
+
+      if (Transaction.total() > 0) {
+        balanceTotal.classList.add("greenCard");
+      } else {
+        balanceTotal.classList.remove("greenCard");
+      } 
+
+    
+      /*if (Transaction.total() < 0) {
+        balanceTotal.classList.add("redCard");
+      } else  if (Transaction.total() > 0) {
+        balanceTotal.classList.add("greenCard");
+      } 
+      else {
+        balanceTotal.classList.remove("cardTotal");
+        balanceTotal.classList.remove("redCard");
+      }*/
+
+    },
+  };
+  
 const Storage = {
     get () {
         return JSON.parse(localStorage.getItem("dev.finances:transactions")) || []
@@ -205,9 +235,13 @@ const App = {
         DOM.updateBalance()
 
         Storage.set(Transaction.all)
+
+        colorBalanceTotal.colorTotal();
+    
     },
     reload() {
         DOM.clearTransactions()
+        colorBalanceTotal.colorTotal();
         App.init()
     },
 }
