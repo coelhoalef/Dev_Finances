@@ -103,7 +103,7 @@ button:hover {
 
 /* HEADER =============================================== */
 header {
-    background: #1D2636;
+    background-image: linear-gradient(to bottom, #00a9c7e8,rgb(247, 245, 245));
     padding: 2rem 0 10rem;
     text-align: center;
 }
